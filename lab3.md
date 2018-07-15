@@ -25,7 +25,7 @@ $ faas-cli template pull
 
 Fetch templates from repository: https://github.com/openfaas/templates.git
  Attempting to expand templates from https://github.com/openfaas/templates.git
- Fetched 11 template(s) : [csharp dockerfile go go-armhf node node-arm64 node-armhf python python-armhf python3 ruby]
+ Fetched 12 template(s) : [csharp dockerfile go go-armhf node node-arm64 node-armhf python python-armhf python3 python3-armhf ruby] from https://github.com/openfaas/templates.git
 ```
 
 After that, to find out which languages are available type in:
@@ -43,6 +43,7 @@ Languages available as templates:
 - python
 - python-armhf
 - python3
+- python3-armhf
 - ruby
 
 Or alternatively create a folder containing a Dockerfile, then pick
@@ -51,7 +52,7 @@ the "Dockerfile" lang type in your YAML file.
 
 At this point you can create a new function for Python, Python 3, Ruby, Go, Node, CSharp etc.
 
-* A note on our examples
+#### A note on our examples
 
 All of our examples for this workshop have been thoroughly tested by the OpenFaaS community with *Python 3*, but should be compatible with *Python 2.7* also.
 
@@ -61,7 +62,7 @@ If you'd prefer to use Python 2.7 instead of Python 3 then swap `faas-cli new --
 
 We will create a hello-world function in Python, then move onto something that uses additional dependencies too.
 
-* Scaffold the function
+First, scaffold the function:
 
 ```
 $ faas-cli new --lang python3 hello-openfaas --prefix="<your-docker-username-here>"
@@ -150,8 +151,6 @@ http://127.0.0.1:8080/function/hello-openfaas
 
 Functions can be invoked via a `GET` or `POST` method only.
 
-* Invoke your function
-
 Test out the function with `faas-cli invoke`, check `faas-cli invoke --help` for more options.
 
 ### Example function: astronaut-finder
@@ -235,10 +234,10 @@ Invoke the function
 
 ```
 $ echo | faas-cli invoke astronaut-finder
-Anton Shkaplerov is in space
+Sergey Prokopyev is in space
 
 $ echo | faas-cli invoke astronaut-finder
-Joe Acaba is in space
+Serena Aunon-Chancellor is in space
 ```
 
 ## Troubleshooting: find the container's logs
