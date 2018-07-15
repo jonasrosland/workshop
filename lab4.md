@@ -159,7 +159,7 @@ hello-openfaas.1.2xtrr2ckkkth@linuxkit-025000000001    | 2018/04/03 08:35:24 std
 
 ## Create Workflows
 
-There will be situations where it will be useful to take the output of one function and use it as an input to another.  This is achievable both client-side and via the API Gateway. 
+There will be situations where it will be useful to take the output of one function and use it as an input to another.  This is achievable both client-side and via the API Gateway.
 
 ### Chaining functions on the client-side
 
@@ -183,7 +183,7 @@ Example:
 * Then push the output from NodeInfo through the Markdown converter
 
 ```sh
-$ echo -n "" | faas-cli invoke nodeinfo | faas-cli invoke func_markdown
+$ echo -n "" | faas-cli invoke nodeinfo | faas-cli invoke markdown
 <p>Hostname: 64767782518c</p>
 
 <p>Platform: linux
@@ -215,7 +215,7 @@ Example:
 
 In [Lab 3](./lab3.md) we introduced the requests module and used it to call a remote API to get the name of an astronaut aboard the ISS. We can use the same technique to call another function deployed on OpenFaaS.
 
-* Go to the *Function Store* and deploy the *Sentiment Analysis* function. 
+* Go to the *Function Store* and deploy the *Sentiment Analysis* function.
 
 The Sentiment Analysis function will tell you the subjectivity and polarity (positivity rating) of any sentence. The result of the function is formatted in JSON as per the example below:
 
